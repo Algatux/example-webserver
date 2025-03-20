@@ -10,3 +10,4 @@ FROM gcr.io/distroless/base-debian12
 WORKDIR /
 COPY --from=builder /app/server .
 CMD ["/server"]
+EXPOSE 8080
