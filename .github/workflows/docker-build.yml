@@ -25,9 +25,3 @@ jobs:
       - name: Push Docker image
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/example-webserver:${{ github.ref_name }}
-
-      - name: Update release with Docker image URL
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: ${{ github.ref_name }}
-          body: "Docker image available at: https://hub.docker.com/r/${{ secrets.DOCKER_USERNAME }}/example-webserver/tags"
